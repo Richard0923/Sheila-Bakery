@@ -1,18 +1,27 @@
 import React,{ Component } from "react";
-import {
-    NavLink
-} from "react-router-dom";
+import { Navbar, Nav, Image } from "react-bootstrap";
 
 class Header extends Component{
     render(){
         return (
             <div id="Header">
-                <h1>Sheila's Bakery</h1>
-                    <ul classname="header">
-                        <li><NavLink to="/">Home</NavLink></li>
-                        <li><NavLink to="/menu">Menu</NavLink></li>
-                        <li><NavLink to="/aboutus">Our Story</NavLink></li>
-                    </ul>
+                <Navbar expand="lg" variant="dark" bg="dark"> 
+                        <Navbar.Brand href="/Home"><Image
+                        src="sheilalogo.png"
+                        height="100"
+                        width="100"
+                        roundedCircle
+                        className="d-inline-block align-top"
+                        /></Navbar.Brand>
+                        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                        <Navbar.Collapse id="basic-navbar-nav">
+                            <Nav classname="mr-auto">
+                                <Nav.Link href="/Home">Home</Nav.Link>
+                                <Nav.Link href="#Menu">Menu</Nav.Link>
+                                <Nav.Link href="#Aboutus">Our Story</Nav.Link>
+                            </Nav>
+                        </Navbar.Collapse>
+                </Navbar>     
             </div>
         );
     }
